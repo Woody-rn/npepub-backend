@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - include:
+      file: v1/001-create-projects-table.yml
+      relativeToChangelogFile: true
+  - include:
+      file: v1/002-create-technologies-table.yml
+      relativeToChangelogFile: true
+  - include:
+      file: v1/003-insert-demo-projects.yml
+      relativeToChangelogFile: true
+  - include:
+      file: v1/004-insert-demo-technologies.yml
+      relativeToChangelogFile: true

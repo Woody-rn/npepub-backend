@@ -1,0 +1,22 @@
+databaseChangeLog:
+  - changeSet:
+      id: 4
+      author: woody-rn
+      preConditions:
+        - onFail: MARK_RAN
+          sqlCheck:
+            expectedResult: 0
+            sql: SELECT COUNT(*) FROM project_technologies
+      changes:
+        - insert: { tableName: project_technologies, columns: [{ column: { name: project_id, value: 1 } }, { column: { name: technology, value: 'Java' } }] }
+        - insert: { tableName: project_technologies, columns: [{ column: { name: project_id, value: 1 } }, { column: { name: technology, value: 'Spring Boot' } }] }
+        - insert: { tableName: project_technologies, columns: [{ column: { name: project_id, value: 1 } }, { column: { name: technology, value: 'React' } }] }
+        - insert: { tableName: project_technologies, columns: [{ column: { name: project_id, value: 1 } }, { column: { name: technology, value: 'Docker' } }] }
+
+        - insert: { tableName: project_technologies, columns: [{ column: { name: project_id, value: 2 } }, { column: { name: technology, value: 'Java' } }] }
+        - insert: { tableName: project_technologies, columns: [{ column: { name: project_id, value: 2 } }, { column: { name: technology, value: 'Spring Boot' } }] }
+        - insert: { tableName: project_technologies, columns: [{ column: { name: project_id, value: 2 } }, { column: { name: technology, value: 'PostgreSQL' } }] }
+
+        - insert: { tableName: project_technologies, columns: [{ column: { name: project_id, value: 3 } }, { column: { name: technology, value: 'Java' } }] }
+        - insert: { tableName: project_technologies, columns: [{ column: { name: project_id, value: 3 } }, { column: { name: technology, value: 'Spring Boot' } }] }
+        - insert: { tableName: project_technologies, columns: [{ column: { name: project_id, value: 3 } }, { column: { name: technology, value: 'Redis' } }] }

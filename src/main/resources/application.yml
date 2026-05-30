@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/npepub}
+    username: ${SPRING_DATASOURCE_USERNAME:npepub_admin}
+    password: ${SPRING_DATASOURCE_PASSWORD:L6JZchMz3+jwTuuHwSF5Vg}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.yml

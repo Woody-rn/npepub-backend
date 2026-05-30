@@ -1,0 +1,35 @@
+databaseChangeLog:
+  - changeSet:
+      id: 3
+      author: woody-rn
+      preConditions:
+        - onFail: MARK_RAN
+          sqlCheck:
+            expectedResult: 0
+            sql: SELECT COUNT(*) FROM projects
+      changes:
+        - insert:
+            tableName: projects
+            columns:
+              - column: { name: title, value: 'npepub.ru' }
+              - column: { name: description, value: 'Личный сайт-портфолио. Стек: Spring Boot, React, Docker.' }
+              - column: { name: github_url, value: 'https://github.com/woody-rn/npepub-backend' }
+              - column: { name: live_url, value: 'https://npepub.ru' }
+              - column: { name: image_url, value: '/images/npepub.png' }
+
+        - insert:
+            tableName: projects
+            columns:
+              - column: { name: title, value: 'Task Tracker' }
+              - column: { name: description, value: 'Система управления задачами с REST API.' }
+              - column: { name: github_url, value: 'https://github.com/woody-rn/task-tracker' }
+              - column: { name: image_url, value: '/images/tasktracker.png' }
+
+        - insert:
+            tableName: projects
+            columns:
+              - column: { name: title, value: 'URL Shortener' }
+              - column: { name: description, value: 'Сервис сокращения ссылок со статистикой переходов.' }
+              - column: { name: github_url, value: 'https://github.com/woody-rn/url-shortener' }
+              - column: { name: live_url, value: 'https://short.npepub.ru' }
+              - column: { name: image_url, value: '/images/shortener.png' }

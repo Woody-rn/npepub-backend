@@ -1,0 +1,23 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2
+      author: woody-rn
+      preConditions:
+        - onFail: MARK_RAN
+          not:
+            tableExists:
+              tableName: project_technologies
+      changes:
+        - createTable:
+            tableName: project_technologies
+            columns:
+              - column:
+                  name: project_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_project_tech
+                    references: projects(id)
+              - column:
+                  name: technology
+                  type: VARCHAR(255)
