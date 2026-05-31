@@ -1,0 +1,4 @@
+app:
+  jwt:
+    secret: ${JWT_SECRET:k7XpQ2vL9mN4wR6tY8uA0bC1dE3fG5hI9jK2lM6nO4pQ7rS8tU9vW0xY1zA2bC3dE4fG5hI6jK7lM8nO9pQ0rS1tU2vW3xY4zA5}
+    expiration: 86400000
