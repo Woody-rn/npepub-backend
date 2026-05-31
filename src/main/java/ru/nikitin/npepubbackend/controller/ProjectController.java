@@ -2,7 +2,7 @@ package ru.nikitin.npepubbackend.controller;
 
 import org.springframework.web.bind.annotation.*;
 import ru.nikitin.npepubbackend.entity.Project;
-import ru.nikitin.npepubbackend.repository.ProjectRepository;
+import ru.nikitin.npepubbackend.service.ProjectService;
 
 import java.util.List;
 
@@ -10,14 +10,14 @@ import java.util.List;
 @RequestMapping("/api/v1")
 public class ProjectController {
 
-    private final ProjectRepository repository;
+    private final ProjectService service;
 
-    public ProjectController(ProjectRepository repository) {
-        this.repository = repository;
+    public ProjectController(ProjectService service) {
+        this.service = service;
     }
 
     @GetMapping("/projects")
     public List<Project> getProjects() {
-        return repository.findAll();
+        return service.getAll();
     }
 }

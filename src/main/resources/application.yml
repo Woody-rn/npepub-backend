@@ -9,3 +9,8 @@ spring:
     show-sql: true
   liquibase:
     change-log: classpath:db/changelog/db.changelog-master.yml
+
+app:
+  jwt:
+    secret: ${JWT_SECRET}
+    expiration: 86400000
