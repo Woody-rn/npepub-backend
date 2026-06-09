@@ -1,0 +1,44 @@
+databaseChangeLog:
+  - changeSet:
+      id: 5
+      author: woody-rn
+      preConditions:
+        - onFail: MARK_RAN
+          not:
+            tableExists:
+              tableName: resumes
+      changes:
+        - createTable:
+            tableName: resumes
+            columns:
+              - column:
+                  name: id
+                  type: BIGSERIAL
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: original_name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: stored_name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: size
+                  type: BIGINT
+              - column:
+                  name: uploaded_at
+                  type: TIMESTAMP
+                  constraints:
+                    nullable: false
+              - column:
+                  name: active
+                  type: BOOLEAN
+                  constraints:
+                    nullable: false

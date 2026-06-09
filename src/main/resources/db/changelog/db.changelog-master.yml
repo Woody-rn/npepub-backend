@@ -11,3 +11,6 @@ databaseChangeLog:
   - include:
       file: v1/004-insert-demo-technologies.yml
       relativeToChangelogFile: true
+  - include:
+      file: v1/005-create-resumes-table.yml
+      relativeToChangelogFile: true
